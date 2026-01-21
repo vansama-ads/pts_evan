@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card - Atha Fakhri Arkana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 1. SETUP DASAR */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            /* Background minimalis abu-abu terang */
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #1f2937;
+        }
+
+        /* 2. KARTU PROFIL (THE CARD) */
+        .profile-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 380px;
+            padding: 40px 30px;
+            border-radius: 24px;
+            text-align: center;
+            /* Efek bayangan lembut agar kartu terlihat melayang */
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Hiasan background garis tipis di atas kartu */
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(to right, #111827, #3b82f6);
+        }
+
+        /* 3. FOTO PROFIL DENGAN GLOW */
+        .image-container {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 25px auto;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #ffffff;
+            /* Efek Glow Biru seperti di gambar asli, tapi lebih halus */
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.6); 
+        }
+
+        /* 4. TYPOGRAPHY (TEKS) */
+        .name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+        }
+
+        .role {
+            font-size: 0.85rem;
+            color: #3b82f6; /* Warna biru untuk highlight role */
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.1);
+            padding: 5px 12px;
+            border-radius: 20px;
+        }
+
+        /* 5. DATA GRID (INFORMASI) */
+        .info-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 25px;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+
+        .label {
+            color: #9ca3af;
+            font-weight: 400;
+        }
+
+        .value {
+            color: #374151;
+            font-weight: 600;
+        }
+
+        /* Tombol Kontak (Opsional, biar makin keren) */
+        .btn-contact {
+            margin-top: 30px;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background: #111827;
+            color: white;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-contact:hover {
+            background: #374151;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        /* Responsif HP */
+        @media (max-width: 400px) {
+            .profile-card {
+                margin: 20px;
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-card">
+        <div class="image-container">
+            <img src="profile.jpeg" alt="Foto Profil" class="profile-img">
+        </div>
+
+        <h1 class="name">Evan Satria Mahardika</h1>
+        <span class="role">Social Media Specialist</span>
+
+        <div class="info-container">
+            <div class="info-row">
+                <span class="label">Kelas</span>
+                <span class="value">XI SIJA 1</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Nomor Absen</span>
+                <span class="value">13</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Status</span>
+                <span class="value" style="color: #10b981;">● Active Student</span>
+            </div>
+        </div>
+
+        <button class="btn-contact" onclick="alert('Halo Evan!')">Hubungi Saya</button>
+    </div>
+
+</body>
+</html>
